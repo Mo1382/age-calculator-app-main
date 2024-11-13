@@ -1,0 +1,134 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+// CSS reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+li,
+ol {
+  list-style-type: none;
+}
+button {
+  border: none;
+}
+
+// app styles
+body {
+  background-color: $neutral-off-white;
+}
+
+.main-container {
+  background-color: $neutral-white;
+  max-width: 842px;
+  border-radius: 24px 24px 200px 24px;
+  margin: 96px auto;
+  padding: 56px;
+  .top {
+    display: flex;
+    .form-group:not(:last-child) {
+      margin-right: 32px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      label {
+        @include poppins-regular-italic;
+        font-size: 15px;
+        display: inline-block;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        color: $neutral-smokey-grey;
+      }
+      input {
+        @include poppins-bold;
+        font-size: 32px;
+        color: $neutral-off-black;
+        width: 100%;
+        max-width: 160px;
+        border: 1px solid $neutral-Light-grey;
+        border-radius: 8px;
+        padding: 11px 24px 13px;
+        outline: none;
+        caret-color: $primary-purple;
+        transition: border-color 0.7s ease;
+        &::placeholder {
+          @include poppins-bold;
+          font-size: 32px;
+          color: $neutral-smokey-grey;
+          transition: color 0.3s ease;
+        }
+        &:focus {
+          border-color: $primary-purple;
+          &::placeholder {
+            color: #854dff49;
+          }
+        }
+      }
+      &.form-group-error {
+        label {
+          color: $primary-light-red;
+        }
+        input {
+          border-color: $primary-light-red;
+        }
+        input::after {
+          content: "";
+          @include poppins-regular-italic;
+          font-size: 14px;
+          color: $primary-light-red;
+        }
+      }
+    }
+  }
+  .middle {
+    margin: 2px 0 -2px;
+    position: relative;
+    direction: rtl;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $neutral-off-white;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .cta-btn {
+      cursor: pointer;
+      width: 96px;
+      height: 96px;
+      background-color: $primary-purple;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background-color: $neutral-off-black;
+      }
+    }
+  }
+  .bottom {
+    div span:first-child {
+      color: $primary-purple;
+      margin-right: 12px;
+    }
+    div span:last-child {
+      color: $neutral-off-black;
+    }
+    span {
+      @include poppins-extrabold-italic;
+      font-size: 104px;
+      line-height: 116px;
+    }
+  }
+}

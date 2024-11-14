@@ -147,4 +147,60 @@ body {
   font-style: italic;
   font-size: 104px;
   line-height: 116px;
+}
+
+@media screen and (max-width: 480px) {
+  .main-container {
+    margin: 86px 16px;
+    border-radius: 16px 16px 140px 16px;
+    padding: 48px 24px 64px;
+  }
+  .main-container .top .form-group:not(:last-child) {
+    margin-right: 16px;
+  }
+  .main-container .top .form-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .main-container .top .form-group input {
+    font-size: 20px;
+    padding: 13px 10px;
+  }
+  .main-container .top .form-group input::-moz-placeholder {
+    font-size: 20px;
+  }
+  .main-container .top .form-group input::placeholder {
+    font-size: 20px;
+  }
+  .main-container .top .form-group.form-group-error input::after {
+    font-size: 10px;
+  }
+  .main-container .middle {
+    margin: 32px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .main-container .middle .cta-btn {
+    width: 64px;
+    height: 64px;
+  }
+  .main-container .middle .cta-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .main-container .bottom div:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  .main-container .bottom div span {
+    font-size: 56px;
+    line-height: 0;
+    display: inline-block;
+    height: 45px;
+  }
+  .main-container .bottom div span:first-child {
+    margin-right: 8px;
+  }
+  .main-container .bottom div:first-child span {
+    margin-top: 24px;
+  }
 }/*# sourceMappingURL=style.css.map */

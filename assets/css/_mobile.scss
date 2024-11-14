@@ -1,0 +1,60 @@
+@media screen and (max-width: 480px) {
+  .main-container {
+    margin: 86px 16px;
+    border-radius: 16px 16px 140px 16px;
+    padding: 48px 24px 64px;
+    .top {
+      .form-group:not(:last-child) {
+        margin-right: 16px;
+      }
+      .form-group {
+        label {
+          font-size: 12px;
+          margin-bottom: 6px;
+        }
+        input {
+          font-size: 20px;
+          padding: 13px 10px;
+          &::placeholder {
+            font-size: 20px;
+          }
+        }
+        &.form-group-error {
+          input::after {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .middle {
+      margin: 32px 0;
+      display: flex;
+      justify-content: center;
+      .cta-btn {
+        width: 64px;
+        height: 64px;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .bottom {
+      div:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      div span {
+        font-size: 56px;
+        line-height: 0;
+        display: inline-block;
+        height: 45px;
+      }
+      div span:first-child {
+        margin-right: 8px;
+      }
+      div:first-child span {
+        margin-top: 24px;
+      }
+    }
+  }
+}

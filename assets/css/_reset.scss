@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+li,
+ol {
+  list-style-type: none;
+}
+button {
+  border: none;
+}
+
+// app styles
+body {
+  background-color: $neutral-off-white;
+}

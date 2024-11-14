@@ -149,7 +149,54 @@ body {
   line-height: 116px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 832px) {
+  .main-container {
+    margin: 90px 32px;
+    border-radius: 20px 20px 170px 20px;
+    padding: 53px 32px;
+  }
+  .main-container .top .form-group:not(:last-child) {
+    margin-right: 24px;
+  }
+  .main-container .top .form-group label {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .main-container .top .form-group input {
+    font-size: 24px;
+    padding: 13px 16px;
+  }
+  .main-container .top .form-group input::-moz-placeholder {
+    font-size: 24px;
+  }
+  .main-container .top .form-group input::placeholder {
+    font-size: 24px;
+  }
+  .main-container .top .form-group.form-group-error input::after {
+    font-size: 12px;
+  }
+  .main-container .middle {
+    margin: 40px 0 24px;
+    display: flex;
+    justify-content: center;
+  }
+  .main-container .middle .cta-btn {
+    width: 78px;
+    height: 78px;
+  }
+  .main-container .middle .cta-btn svg {
+    width: 32px;
+    height: 32px;
+  }
+  .main-container .bottom div span {
+    font-size: 82px;
+    line-height: 89px;
+  }
+  .main-container .bottom div span:first-child {
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
   .main-container {
     margin: 86px 16px;
     border-radius: 16px 16px 140px 16px;

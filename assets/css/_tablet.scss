@@ -1,2 +1,52 @@
 @media screen and (max-width: 832px) {
+  .main-container {
+    margin: 90px 32px;
+    border-radius: 20px 20px 170px 20px;
+    padding: 53px 32px;
+    .top {
+      .form-group:not(:last-child) {
+        margin-right: 24px;
+      }
+      .form-group {
+        label {
+          font-size: 13px;
+          margin-bottom: 8px;
+        }
+        input {
+          font-size: 24px;
+          padding: 13px 16px;
+          &::placeholder {
+            font-size: 24px;
+          }
+        }
+        &.form-group-error {
+          input::after {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .middle {
+      margin: 40px 0 24px;
+      display: flex;
+      justify-content: center;
+      .cta-btn {
+        width: 78px;
+        height: 78px;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+    .bottom {
+      div span {
+        font-size: 82px;
+        line-height: 89px;
+      }
+      div span:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
 }

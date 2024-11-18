@@ -54,11 +54,11 @@
         input {
           border-color: $primary-light-red;
         }
-        input::after {
-          content: "";
+        .error-msg {
           @include poppins-regular-italic;
           font-size: 14px;
           color: $primary-light-red;
+          margin-top: 10px;
         }
       }
     }

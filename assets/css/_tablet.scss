@@ -20,8 +20,9 @@
           }
         }
         &.form-group-error {
-          input::after {
+          .error-msg {
             font-size: 12px;
+            margin-top: 8px;
           }
         }
       }

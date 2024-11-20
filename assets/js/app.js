@@ -5,6 +5,12 @@ const dayInput = document.querySelector("#day-input");
 const monthInput = document.querySelector("#month-input");
 const yearInput = document.querySelector("#year-input");
 
+const yearCounterEl = document.querySelector("#year-counter span:first-child");
+const monthCounterEl = document.querySelector(
+  "#month-counter span:first-child"
+);
+const dayCounterEl = document.querySelector("#day-counter span:first-child");
+
 // Data
 // declare here to be accessible in diff functions
 // let ageYears;
@@ -277,7 +283,6 @@ const resetErrsInUI = function (els) {
   els.forEach((el) => {
     const parentErrEl = el.parentElement;
 
-    console.log(parentErrEl);
     parentErrEl.classList.remove("form-group-error");
 
     document.querySelectorAll(".error-msg").forEach((el) => {
@@ -410,6 +415,36 @@ const calcAge = function (day, month, year) {
 //   return [ageYears, ageMonths, ageDays];
 // };
 
+/**
+ * Renders an age component with an animated counter.
+ *
+ * @param {number} ageComponent - The target age value to count up to.
+ * @param {HTMLElement} elToRneder - The DOM element to render the counter in.
+ * @param {number} timerSec - The time in seconds between each increment of the counter.
+ */
+const renderAgeComponent = function (ageComponent, elToRender, timerSec) {
+  let counter = 0;
+
+  elToRender.textContent = counter;
+  const counterTimer = setInterval(() => {
+    if (ageComponent === counter) clearInterval(counterTimer);
+
+    counter++;
+    elToRender.textContent = counter;
+  }, timerSec);
+};
+
+const renderAge = function (ageYear, ageMonth, ageDay) {
+  // Rendering age year with animation in UI
+  renderAgeComponent(ageYear, yearCounterEl, 30);
+
+  // Rendering age month with animation in UI
+  renderAgeComponent(ageMonth, monthCounterEl, 30);
+
+  // Rendering age day with animation in UI
+  renderAgeComponent(ageDay, dayCounterEl, 30);
+};
+
 const formValidation = function () {
   validitionCheck = {
     // True | False
@@ -448,13 +483,13 @@ ctaBtn.addEventListener("click", function (e) {
 
   // If the form is valid, show the result
   if (isFormValid) {
-    console.log(
-      calcAge(
-        getInputNumber(dayInput),
-        getInputNumber(monthInput),
-        getInputNumber(yearInput)
-      )
+    const userAge = calcAge(
+      getInputNumber(dayInput),
+      getInputNumber(monthInput),
+      getInputNumber(yearInput)
     );
+
+    renderAge(...userAge);
   }
 
   // If the form is invalid, show the errors

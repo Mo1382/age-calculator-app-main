@@ -14,7 +14,10 @@ button {
   border: none;
 }
 
-// app styles
 body {
   background-color: $neutral-off-white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

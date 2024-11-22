@@ -19,13 +19,18 @@ button {
 
 body {
   background-color: #f0f0f0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-container {
   background-color: #ffffff;
   max-width: 842px;
   border-radius: 24px 24px 200px 24px;
-  margin: 96px auto;
+  margin: auto;
+  flex-basis: 100%;
   padding: 56px;
 }
 .main-container .top {

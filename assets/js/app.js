@@ -11,13 +11,14 @@ const monthCounterEl = document.querySelector(
 );
 const dayCounterEl = document.querySelector("#day-counter span:first-child");
 
-// Data
-// declare here to be accessible in diff functions
-// let ageYears;
-// let ageMonths;
-
 // Functions
-
+/**
+ * Adds error information to a validation object.
+ *
+ * @param {Object} validitionObj - The validation object to add the error information to.
+ * @param {string} errMsg - The error message to add.
+ * @param {HTMLElement} errEl - The HTML element to render the error.
+ */
 const addErrInfo = function (validitionObj, errMsg, errEl) {
   validitionObj.validition = false;
 
@@ -314,7 +315,6 @@ const renderErrs = function (errMsgs, errEls) {
   });
 };
 
-// Calculate age - way 1 (more accurate)
 /**
  * Calculates the age in years based on the provided birth year.
  *
@@ -384,36 +384,9 @@ const calcAge = function (day, month, year) {
 
   const ageDays = calcAgeDays(day);
 
+  console.log(ageYears, ageMonths, ageDays);
   return [ageYears, ageMonths, ageDays];
 };
-
-// Calculate age - way 2 (less accurate)
-
-/**
- * Calculates the age in years, months, and days based on the provided birth date.
- *
- * @param {number} day - The birth day.
- * @param {number} month - The birth month.
- * @param {number} year - The birth year.
- * @returns {number[]} An array containing the age in years, months, and days.
- */
-// const calcAge = function (day, month, year) {
-//   const curDate = new Date();
-//   const birthDate = new Date(year, month - 1, day);
-
-//   const ageMlSecs = curDate - birthDate;
-
-//   const ageDate = new Date(ageMlSecs);
-//   console.log(ageDate);
-
-//   const ageYears = ageDate.getUTCFullYear() - 1970;
-//   console.log(ageYears);
-//   const ageMonths = ageDate.getUTCMonth();
-//   console.log(ageMonths);
-//   const ageDays = ageDate.getUTCDate() - 1;
-
-//   return [ageYears, ageMonths, ageDays];
-// };
 
 /**
  * Renders an age component with an animated counter.
@@ -426,17 +399,20 @@ const renderAgeComponent = function (ageComponent, elToRender, timerSec) {
   let counter = 0;
 
   elToRender.textContent = counter;
-  const counterTimer = setInterval(() => {
-    if (ageComponent === counter) clearInterval(counterTimer);
 
+  if (ageComponent === 0) return;
+
+  const counterTimer = setInterval(() => {
     counter++;
+
     elToRender.textContent = counter;
+    if (ageComponent === counter) clearInterval(counterTimer);
   }, timerSec);
 };
 
 const renderAge = function (ageYear, ageMonth, ageDay) {
   // Rendering age year with animation in UI
-  renderAgeComponent(ageYear, yearCounterEl, 30);
+  renderAgeComponent(ageYear, yearCounterEl, 25);
 
   // Rendering age month with animation in UI
   renderAgeComponent(ageMonth, monthCounterEl, 30);
